@@ -1,0 +1,101 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background: url("../images/login/login_bg.png") no-repeat center center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.login-box {
+    width: 584px;
+    height: 640px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    right: 157px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.login-box h1 {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 52px;
+}
+.login-box .info {
+    text-align: center;
+    padding-top: 120px;
+    position: relative;
+}
+.login-box input.username,
+.login-box input.psd {
+    font-size: 22px;
+    padding-left: 5px;
+    height: 60px;
+    width: 460px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-bottom: 2px solid #000000;
+}
+.login-box .identify-code {
+    display: none;
+}
+.login-box label {
+    vertical-align: middle;
+    color: #757575;
+    font-size: 14px;
+    text-decoration: underline;
+    display: inline-block;
+    padding-top: 8px;
+}
+.login-box label i {
+    cursor: pointer;
+}
+.login-box input.identify {
+    width: 265px;
+    font-size: 22px;
+    padding-left: 5px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-bottom: 2px solid #000000;
+}
+.info .pic {
+    display: inline-block;
+    width: 126px;
+    height: 48px;
+    background-color: pink;
+}
+.info p {
+    padding-top: 12px;
+    position: absolute;
+    left: 62px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff0000;
+    display: none;
+}
+.info a {
+    margin-top: 12px;
+    display: block;
+    width: 120px;
+    position: absolute;
+    right: 35px;
+    font-size: 18px;
+    color: #55cfff;
+}
+.info button {
+    display: block;
+    height: 98px;
+    width: 498px;
+    background: url("../images/login/btn_login.png");
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 372px;
+    cursor: pointer;
+}
+.info button:hover {
+    opacity: 0.8;
+}

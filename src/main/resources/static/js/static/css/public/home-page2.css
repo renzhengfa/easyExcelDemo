@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    /* max-width: 3840px;
+    min-width: 1550px; */
+  /* max-height: 600px; */
+	width: 120rem;
+    height: 67.5rem;
+	width: 100%;
+	height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    background: #fff;
+    /* overflow: hidden; */
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: url(../../images/dataimgs/bg_1.jpg) no-repeat top center;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container .top {
+    text-align: center;
+    background: url(../../images/dataimgs/top_1.png) no-repeat top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.container .title {
+    font-size: 32px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: -webkit-linear-gradient(bottom, #3BB8FF, #1CDBE7);
+    -webkit-background-clip: text;
+    color: transparent;
+	font-weight: bold;
+}
+
+/* 内容 */
+
+.contentBox {
+    position: absolute;
+    top: 120px;
+    z-index: 99;
+    width: 100%;
+}
+
+.container .contentBox i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(../../images/dataimgs/icon_1.png) center;
+    vertical-align: middle;
+}
+
+.container .contentBox b {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../../images/dataimgs/icon_2.png) center;
+    vertical-align: middle;
+}
+
+.contentBox .first-row,
+.contentBox .second-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.contentBox .second-row {
+    position: relative;
+    bottom: -34px;
+    left: 0;
+}
+
+.contentBox .first-row>div {
+    width: 33.3%;
+    /* border: 1px solid #fff; */
+}
+
+.contentBox .second-row>div {
+    width: 50%;
+    /* border: 1px solid #fff; */
+}
+
+.contentBox span {
+    color: #aedaff;
+    font-size: 18px;
+}
+
+.leftBox {
+    background: url(../../images/dataimgs/left.png) 10% no-repeat;
+    background-size: 90% 100% !important;
+}
+
+.rightBox {
+    background: url(../../images/dataimgs/right.png) 90% no-repeat;
+    background-size: 90% 100% !important;
+}
+
+.leftBottomBox {
+    background: url(../../images/dataimgs/leftBottom.png) 10% no-repeat;
+    background-size: 90% 100% !important;
+    width: 100%;
+    height: 440px;
+}
+/* #archive-borrow-count canvas{
+    width: 760px !important;
+} */
+.rightBottomBox {
+    background: url(../../images/dataimgs/rightBottom.png) 90% no-repeat;
+    background-size: 90% 100% !important;
+    width: 100%;
+    height: 440px;
+}
+
+.leftBox,
+.centerBox,
+.rightBox,
+.leftBottomBox,
+.rightBottomBox {
+    position: relative;
+}
+
+.leftBox p,
+.centerBox p{
+    position: absolute;
+    left: 10%;
+/*60px;*/
+    top: 30px;
+}
+.leftBottomBox p {
+    position: absolute;
+    left: 60px;
+    top: 40px;
+}
+.leftBottomBox .time{
+    position: absolute;
+    top: 100px;
+    right: 140px;
+}
+
+
+.rightBox p{
+    position: absolute;
+    /*left: 110px;*/
+    left: 17%;
+    top: 30px;
+}
+.rightBottomBox p {
+    position: absolute;
+    /*left: 150px;*/
+    left: 15%;
+    top: 40px;
+}
+
+.form_select {
+    position: absolute;
+    top: 26px;
+    right: 80px;
+    width: 130px;
+    height: 28px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #aedaff;
+    /* 清除默认边框 */
+    border-radius: 6px;
+    border: 1px solid #aedaff;
+    /* 清除默认的箭头样式 */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* 右侧添加小箭头的背景图 */
+    background:#008aff url('../../images/dataimgs/arrow.png') right center no-repeat;
+    background-size: 12px;
+}
+
+/* 进度条 */
+
+.layui-bg1 {
+    background-color: #008aff;
+}
+
+.layui-bg2 {
+    background-color: #ff9d46;
+}
+
+.layui-bg3 {
+    background-color: #46cdff;
+}
+
+.layui-bg4 {
+    background-color: #ff4e4e;
+}
+
+.layui-progress {
+    position: relative;
+    top: 20px;
+    right: 0;
+    background-color: #00437c !important;
+}
+
+.layui-progress-big .layui-progress-text {
+    position: relative;
+    color: #1cdbe7;
+}
+
+.contentBox span {
+    font-size: 16px;
+}
+
+#on-archive table {
+    font-size: 16px;
+    color: #addaff;
+}

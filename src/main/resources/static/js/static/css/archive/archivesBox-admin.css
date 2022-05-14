@@ -1,0 +1,52 @@
+#layer-page .left {
+    width: 640px;
+    height: 550px;
+    float: left;
+}
+#layer-page .left h3 {
+    color: #666666;
+    font-size: 16px;
+}
+#layer-page .left button {
+    border-radius: 5px;
+}
+#layer-page .center {
+    width: 1px;
+    height: 550px;
+    background-color: #dcdcdc;
+    float: left;
+    margin-left: 30px;
+    margin-top: 0px;
+}
+#layer-page .right {
+    margin-top: 40px;
+    width: 300px;
+    height: 450px;
+    float: left;
+}
+#layer-page .position {
+    margin-top: 20px;
+}
+.clearfix {
+    clear: both;
+}
+#layer-page table th {
+    height: 20px !important;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #3a97ff;
+}
+span.icon {
+    display: inline-block;
+    color: red;
+    font-size: 16px;
+}
+/* a.line {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 18px;
+    background: #3aa0ff;
+    margin-left: -15px;
+    margin-right: -15px;
+} */

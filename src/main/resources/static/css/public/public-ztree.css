@@ -1,0 +1,53 @@
+.ztree li.level0 {
+  padding-bottom: 25px;
+}
+#treeDemo {
+  margin-top: 6px;
+  overflow-x: auto;
+  height: 98%;
+}
+.ztree * {
+  font-size: 15px;
+}
+.ztree li a {
+  color: #666666;
+}
+.ztree li a.curSelectedNode {
+  background-color: #fff;
+  border: 1px #fff solid;
+  color: #3a97ff;
+}
+.ztree li span.button {
+  margin-left: 5px;
+}
+.ztree li span.add {
+  background-image: url(../../images/ztree/ztree-add.png);
+}
+.ztree li span.button.edit {
+  background-image: url(../../images/ztree/ztree-mod.png);
+  margin-right: 0;
+  background-position: 0;
+}
+.ztree li span.button.remove {
+  background-image: url(../../images/ztree/ztree-deleted.png);
+  margin-right: 0;
+  background-position: 0;
+}
+.level0 li {
+  margin-top: 10px;
+}
+.ztree li span.button.noline_docu {
+  background-color: rgb(229, 229, 229);
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+.ztree li a.curSelectedNode span.button.noline_docu {
+  background-color: #3a97ff;
+}
+.ztree li span.button.ico_docu {
+  width: 0;
+}

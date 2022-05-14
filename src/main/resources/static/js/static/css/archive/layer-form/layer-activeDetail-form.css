@@ -1,0 +1,56 @@
+.container {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+}
+
+span {
+    float: left;
+    display: block;
+    padding: 9px 15px 9px 0;
+    min-width: 40px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+
+.layui-form-item h4 {
+    color: #999999;
+    font-size: 14px;
+}
+
+.file-preview img, .preview img{
+    height: 130px;
+    width: 130px;
+    margin: 2px;
+    border: 1px solid #C9C9C9;
+    padding: 2px;
+}
+
+.auditorAttachment {
+    height: 300px;
+    margin-left: 110px;
+    background-color: lightgrey;
+}
+.preview-btn {
+    width: 60px;
+    height: 32px;
+    margin-left: 2px;
+    border-radius: 4px;
+    border: 1px solid #C9C9C9;
+    cursor: pointer;
+    background: white url("../../../images/archive/preview.png") no-repeat center;
+    background-size: 50%;
+}
+
+.download {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-top: 1px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #C9C9C9;
+    cursor: pointer;
+    background: white url('../../../images/archive/download.png') no-repeat center;
+    background-size: 50%;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>归档中心-待归档案</title>
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+    <link rel="stylesheet" href="./zTree_v3/css/zTreeStyle/zTreeStyle.css" />
+    <link rel="stylesheet" href="./css/public/default-style.css" />
+</head>
+<body>
+    <div class="nav-bar">
+        <span class="layui-breadcrumb">
+            <!--<a>归档中心</a>-->
+            <!--<span lay-separator="">&gt;</span>-->
+            <!--<a>-->
+                <!--<cite>待归档案</cite>-->
+            <!--</a>-->
+        </span>
+    </div>
+    <div class="wrap">
+        <div class="body-post">   
+            <form class="demoTable layui-form">
+                <div class="layui-inline topmargin">
+                        <label class="layui-form-label">密 &nbsp; &nbsp;级：</label>
+                        <div class="layui-input-inline selectwidth">
+                            <select id="borrow_list_state" name="archiveLevel" class="borrow-list-select batch-operation">
+                                <option value="">全部</option>
+                            </select>
+                        </div>
+                    </div>
+                <div class="layui-inline topmargin">
+                    <label class="layui-form-label">档案类别:</label>
+                    <div class="layui-input-inline" id="ztreeSelect">
+                        <input type="text" name="department_name" id="department_name" lay-verify="title" autocomplete="off" class="layui-input"
+                            value="" readonly="readonly" onclick="initTree()" />
+                        <input type="text" name="department_id" id="department_id" value="" class="layui-input" style="display:none;" />
+                        <div id="departmentTreeDiv" style="display:none;background-color: white;position:absolute;z-index:9999;border: 1px solid #DDDDDD;margin-top:5px">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="layui-inline topmargin">
+                    <label class="layui-form-label">创建时间:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="starttime" placeholder="请选择开始时间" class="layui-input pointer"
+                         id="date_picker1" autocomplete="off"/>
+                    </div>
+                    <span class="separat">至</span>
+                    <div class="layui-input-inline">
+                        <input type="text" name="endtime" placeholder="请选择结束时间" class="layui-input pointer"
+                         id="date_picker2" autocomplete="off"/>
+                    </div>
+                </div>
+ 
+                <div class="layui-inline  topmargin"> 
+                    <label class="layui-form-label my-btnquery">搜 &nbsp; &nbsp;索：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="search-word layui-input my-btnquery layui-btn-style" id="search_word" name="searchWord" placeholder="档号、题名、RFID、条码"
+                            maxlength="24" style="width: 300px;">
+                    </div>
+                </div>   
+                <div class="layui-inline  topmargin my-btnquery">
+                    <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="saveSearchInfo" >查&nbsp;&nbsp;询</button>
+                    <a class="layui-btn layui-btn-normal  batch-operate" data-type="batchDelete">批量删除</a>
+                    <a class="layui-btn layui-btn-normal  batch-operate" data-type="batchReturn" id="batchReturn">批量归档</a>
+                    <!--<a class="layui-btn layui-btn-normal  batch-operate" data-type="batchImport">批量导入</a>-->
+                    <a class="layui-btn layui-btn-normal modaljump" href="./layer-batchimport.html" action="close-layer-batchimport"
+                       data-title="导入文件" data-ico="static/images/add.png" data-type="2" width="470px" height="320px" data-btn="保存,取消">批量导入</a>
+                    <a class="layui-btn layui-btn-normal modaljump" href="html/archive/form/layer-upload-attachment.html" action="archivesmodule/arcTbFiles/addFilesAttachmentMatching"
+                       data-title="上传附件" data-ico="static/images/add.png" data-type="2" width="470px" height="320px" data-process="true" data-btn="保存,取消">批量上传附件</a>
+                    <a class="layui-btn layui-btn-normal  batch-operate" id="conditionPage">条件导出</a>
+                    <a class="layui-btn layui-btn-normal  batch-operate" id="add_archive">新增档案</a>
+                </div> 
+            </form>
+            <!--数据表格-->
+            <div class="body-table"> 
+                <table id="table_content" lay-filter="table-operation"></table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/layui.js"></script>
+<script src="/js/public-ajax.js"></script>
+<script src="/js/public-table.js"></script>
+<script src="/js/jquery.ztree.all.js"></script>
+<script src="/js/jquery.ztree.core.js"></script>
+<script src="/js/ztree.js"></script>
+<script src="/js/ztreeSelect.js"></script>
+<script src="/js/public-initTree.js"></script>
+<script src="/js/public-btn-click.js"></script>
+<script src="/js/public-menu.js"></script>
+<script src="/js/waiting-for-archiving.js"></script>
+<script src="/js/init.js"></script>
+<script type="text/html" id="operation">
+    <a class="layui-btn-xs layui-btn-tablexs" lay-event="edit">编辑</a>
+    <a href="javascript:;" class="line"></a>
+    <a class="layui-btn-xs layui-btn-tablexs" lay-event="applicate">申请归档</a>
+    <a href="javascript:;" class="line"></a>
+    <a class="layui-btn-xs layui-btn-tablexs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="state_identity">
+    {{#  if(d.state === "tba"){ }}
+    <span><span
+            style="display: inline-block;width: 10px; height: 10px; background-color: #fff002; border-radius: 50%;"></span><i
+            style="display: inline-block;width: 10px;"></i>{{"待归档"}}</span>
+    {{#  } else if (d.state === "ita"){ }}
+    <span><span
+            style="display: inline-block;width: 10px; height: 10px; background-color: #ffa200; border-radius: 50%;"></span><i
+            style="display: inline-block; width: 10px;"></i>{{"归档中"}}</span>
+    {{#  } }}
+</script>
+</html>

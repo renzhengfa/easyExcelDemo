@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>档案中心-新增档案</title>
+		<link rel="stylesheet" href="../../../frames/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../frames/assets/styles/simditor.css" />
+		<link rel="stylesheet" href="../../../frames/zTree_v3/css/zTreeStyle/zTreeStyle.css" />
+		<link rel="stylesheet" href="../../../static/css/public/public-ztree.css" />
+		<link rel="stylesheet" href="../../../static/css/public/default-style.css">
+		<style>
+			.layui-btn.layui-btn-xs:hover {
+            background: none !important;
+        }
+        .icon {
+            font-size: 16px;
+            color: red;
+            position: relative;
+            top: 5px;
+            margin-right: 5px;
+        }
+       /*table固定高度并加滚动条--liuyuru*/
+        table {
+            /*设置相邻单元格的边框间的距离*/
+            
+            border-spacing: 0;
+            /*表格设置合并边框模型*/
+            border-collapse: collapse;
+            text-align: center;
+        }
+        /*关键设置 tbody出现滚动条*/
+        table tbody {
+            display: block;
+            /*max-height: 200px;*/
+            overflow-y: scroll;
+            overflow-x: scroll;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        table thead,
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        /*关键设置：滚动条默认宽度是16px 将thead的宽度减16px*/
+        table thead {
+            width: calc( 100% - 5px)
+        }
+        table thead th {
+            /*background: #ccc;*/
+        }
+        /*table滚动条样式*/
+        table tbody::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background-color: transparent;
+        }
+        table tbody::-webkit-scrollbar-thumb {
+            background: #9bcaff;
+            border-radius: 10px;
+        }
+        .layui-form-label{
+            padding: 9px 0;
+            width: 100px;
+        }
+        /*textarea滚动条样式*/
+        textarea.layui-textarea::-webkit-scrollbar{
+            width: 5px;
+            height: 5px;
+            background-color: transparent;
+        }
+        textarea.layui-textarea::-webkit-scrollbar-thumb {
+            background: #9bcaff;
+            border-radius: 10px;
+        }
+        .layui-elem-field legend {
+            color: #999999;
+        }
+        .wrap-special {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            /*height: calc(100% - 76px);*/
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255) !important;
+        }
+        .curSelectedNode span.node_name{
+            color: #3a97ff;
+        }
+.hide{
+    display: none;
+}
+a.preview-pdf,.preview-excel{
+	display: inline-block;
+	margin: 0 5px;
+}
+    </style>
+	</head>
+	<body>
+		<div class="nav-bar">
+			<span class="layui-breadcrumb">
+				<a>归档中心</a> <span lay-separator="">&gt;</span>
+				<a> <cite class="title2"></cite> </a>
+			</span>
+		</div>
+		<div class="wrap-special">
+			<div class="body-post">
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>基本信息</legend>
+					<div class="layui-field-box">
+						<form class="layui-form" id="edit_info_form" lay-filter="archiveInfo">
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input del" name="fileName" autocomplete="off" />
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>档&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input del" name="fileNum" id="fileNum" autocomplete="off" maxlength="30" />
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>全 &nbsp;宗&nbsp; 号：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input del" name="fondsId" autocomplete="off" maxlength="8" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;源：</label>
+										<div class="layui-input-block">
+											<select name="fkSourceId" id="arc_source"></select>
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>著 &nbsp;录 &nbsp;人：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input" name="author" autocomplete="off" maxlength="8" />
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>著录单位：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input" name="recordOrganize" autocomplete="off" maxlength="24" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input del" name="pageNum" autocomplete="off" maxlength="5" />
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>完&nbsp; 整 &nbsp;度：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input del" name="integrity" autocomplete="off" maxlength="7" placeholder="请输入0-100的数字" />
+										</div>
+									</div>
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：</label>
+										<div class="layui-input-block">
+											<select name="fkSecretId" class="del" lay-filter="secrete"></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md4">
+										<label class="layui-form-label"><span class="icon">*</span>档案类别：</label>
+										<div class="layui-input-block">
+											<input class="layui-input" type="text" name="fkTypeName" id="fkTypeName" autocomplete="off" readonly
+											 placeholder="请点击选择档案类别" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>所属库房：</label>
+										<div class="layui-input-block">
+											<select name="fkStoreName" id="store_Room1" lay-filter="storeroom1"></select>
+										</div>
+									</div>
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>所属区：</label>
+										<div class="layui-input-block">
+											<select name="fkRegionName" id="area1" lay-filter="areaName1"> </select>
+										</div>
+									</div>
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>所属列：</label>
+										<div class="layui-input-block">
+											<select name="colNum" lay-filter="cols1" id="cols1"></select>
+										</div>
+									</div>
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>所属节：</label>
+										<div class="layui-input-block">
+											<select name="divNum" id="lays1"></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>所属层：</label>
+										<div class="layui-input-block">
+											<select name="laysNum" id="divs1"></select>
+										</div>
+									</div>
+									<div class="layui-col-md3">
+										<label class="layui-form-label"><span class="icon">*</span>方向：</label>
+										<div class="layui-input-block">
+											<select name="direction" lay-filter="direction" id="direction">
+												<option value=""></option>
+												<option value="左">左</option>
+												<option value="右">右</option>
+											</select>
+										</div>
+									</div>
+									<div class="layui-col-md3">
+										<label class="layui-form-label">号：</label>
+										<div class="layui-input-block">
+											<input type="text" class="layui-input" name="number" id="num" maxlength="22" placeholder="请输入号" autocomplete="off" />
+										</div>
+									</div>
+									<input type="hidden" name="regionNum" id="regionNum" />
+								</div>
+							</div>
+							<!-- 是否永久有效归档 -->
+							<!--
+							<div id="" class="isForver layui-form-item">
+								<div class="layui-row">
+									<div class="layui-col-md2">
+										<div class="layui-inline">
+											<label class="layui-form-label">是否永久归档：</label>
+											<div class="layui-input-block" id="forver_div">
+												<input type="radio" class="del" name="allowForver" value="0" title="否" lay-filter="forver_div" />
+												<input type="radio" class="del" name="allowForver" value="1" title="是" checked lay-filter="forver_div" />
+											</div>
+										</div>
+									</div>
+
+									<div class="layui-col-md3">
+										
+										<label class="layui-form-label">设置归档时间：</label>
+										<div class="layui-inline">
+											<input type="text" class="layui-input" id="test1">
+										</div>
+
+									</div>
+								</div>
+							</div>
+							-->
+							<!-- 摘要 -->
+							<div class="layui-form-item layui-form-text">
+								<label class="layui-form-label">摘&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要：</label>
+								<div class="layui-input-block">
+									<textarea class="layui-textarea del" name="summary" placeholder="请输入内容" maxlength="400"></textarea>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<!-- 电子标签 RFID扫描 -->
+									<div class="layui-col-md5">
+										<div class="layui-form-item">
+											<label class="layui-form-label">允许借阅：</label>
+											<div class="layui-input-block" id="borrow_div">
+												<input type="radio" class="del" name="allowBorrows" value="0" title="否" lay-filter="radio_borrow_div" />
+												<input type="radio" class="del" name="allowBorrows" value="1" title="是" checked lay-filter="radio_borrow_div" />
+											</div>
+										</div>
+										<div class="layui-form-item">
+											<label class="layui-form-label">电子标签：</label>
+											<div class="layui-input-block">
+												<div style="display: inline-block; width: calc(100% - 170px)">
+													<input type="text" readonly class="layui-input" name="rfid" id="rfid" maxlength="24" />
+													<label id="identify_error" class="error" for="fondsId"></label>
+												</div>
+												<button type="button" id="identify_tag" class="layui-btn layui-inline" style="position: absolute;top: 0;right:70px;background-color: #3a97ff">识&nbsp;别
+
+													<img src="../../../static/images/loading.gif" alt="" class="rfid-loading" style="display: none;width: 12px;">
+												</button>
+
+											</div>
+										</div>
+									</div>
+									<!-- 条码生成 -->
+									<div class="layui-col-md7">
+										<div class="layui-form-item">
+											<label class="layui-form-label">条&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+											<input type="hidden" id="barcode">
+											<div class="layui-input-block">
+												<div class="barcode-area" style="display:inline-block;margin-bottom: 10px;">
+													<div style="padding-top: 5px;width: 270px;height:140px; display: inline-block; border: 1px solid #dcdcdc">
+														<img src="" alt="" id="pic" width="270" height="140" />
+													</div>
+												</div>
+												<div style="display: inline-block;margin-left: 5px">
+													<button type="button" class="layui-btn" id="generate_bar_code">生成条码</button>
+													<button type="button" class="layui-btn" id="print_bar_code">打印条码</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-inline">
+
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</fieldset>
+				<!-- 附件信息模块 -->
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>附件信息</legend>
+					<div class="layui-field-box">
+						<div class="layui-upload">
+							<button type="button" class="layui-btn" id="upload_files">选择多文件</button>
+							<button type="button" class="layui-btn" id="reupload">开始上传</button>
+							<div class="layui-upload-list">
+								<table class="layui-table" id="file_list">
+									<thead>
+										<tr>
+											<th style="text-align: center;">文件名</th>
+											<th style="text-align: center;">大小</th>
+											<th style="text-align: center;">状态</th>
+											<th style="text-align: center;">操作</th>
+										</tr>
+									</thead>
+									<tbody id="fileList"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="layui-elem-field layui-field-title">
+					<legend>档案信息</legend>
+					<div class="layui-field-box">
+						<form class="layui-form" id="archiveInfo" lay-filter="archiveInfo"></form>
+					</div>
+				</fieldset>
+				<div class="layui-layer-btn layui-layer-btn-c">
+					<button class="layui-layer-btn0" lay-filter="saveEditInfo" lay-submit>保存</button>
+					<button class="layui-layer-btn1 addArchiveCancel">取消</button>
+				</div>
+			</div>
+		</div>
+		<!-- 档案类型弹出层 -->
+		<div id="file_type_tree" style="display: none">
+			<ul id="treeDemo" class="ztree" style="margin: 30px 0 0 20px;"></ul>
+			<!--<span><hr style="width: 90%;margin-left:0px;"/></span>-->
+		</div>
+		<!-- 模板 -->
+		<div class="layui-form" id="module" style="display: none;">
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block">
+					<input type="text" name="" lay-filter="required" autocomplete="off" placeholder="请输入标题" class="layui-input input-width" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block">
+					<select name="interest" class="input-width">
+						<option value=""></option>
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block">
+					<input type="radio" name="" value="" title="" />
+					<input type="radio" name="" value="" title="" />
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block">
+					<input type="checkbox" name="" title="" />
+				</div>
+			</div>
+
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label"></label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入内容" class="layui-textarea" lay-filter="required"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit="" lay-filter="demo">
+						立即提交
+					</button>
+					<button type="reset" class="layui-btn layui-btn-primary">
+						重置
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="container" style="display: none;">
+			<form class="layui-form">
+			</form>
+		</div>
+	</body>
+	<script src="../../../frames/jquery-1.11.1.min.js"></script>
+	<script src="../../../frames/layui/layui.js"></script>
+	<script src="../../../frames/jquery.jqprint-0.3.js"></script>
+	<script src="../../../frames/jquery-migrate-1.2.1.js"></script>
+	<script src="../../../static/js/public/public-ajax.js"></script>
+	<script src="../../../frames/zTree_v3/js/jquery.ztree.all.js"></script>
+	<script src="../../../static/js/public/public-table.js"></script>
+	<script src="../../../static/js/public/public-ztree.js"></script>
+	<script src="../../../frames/jquery.validate.js"></script>
+	<script src="../../../frames/messages_zh.min.js"></script>
+	<script src="../../../static/js/public/my-validator.js"></script>
+	<script src="../../../frames/assets/scripts/module.js"></script>
+	<script src="../../../frames/assets/scripts/hotkeys.js"></script>
+	<script src="../../../frames/assets/scripts/uploader.js"></script>
+	<script src="../../../frames/assets/scripts/dompurify.js"></script>
+	<script src="../../../frames/assets/scripts/simditor.js"></script>
+	<script src="../../../static/js/public/public-menu.js"></script>
+	<script src="../../../static/js/public/public-rfid.js"></script>
+	<script src="../../../static/js/public/form-validate.js"></script>
+	<script src="./add-archive/store-region.js"></script>
+	<script src="./add-archive/excel/xlsx.core.min.js"></script>
+	<script src="./add-archive/excel/excel.js"></script>
+	<script src="../../../static/js/archive/add-archive.js"></script>
+	<script>
+		$(".addArchiveCancel").on("click", function() {
+			window.parent.archiveToWait();
+			//        window.location.href = "waiting-for-archiving.html";
+		});
+		$('#fkTypeName').keyup(function(e) {
+			if (e.keyCode === 9) {
+				$('input[name="fkTypeName"]').click();
+			}
+		});
+	</script>
+</html>

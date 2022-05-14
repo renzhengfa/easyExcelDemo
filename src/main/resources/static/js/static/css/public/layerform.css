@@ -1,0 +1,386 @@
+.layui-layer-title {
+	padding: 0 20px 0 20px !important;
+	text-align: center !important;
+	font-size: 18px !important;
+	background-color: #fff !important;
+	margin: 0 24px !important;
+	height: 56px !important;
+	line-height: 56px !important;
+	border-bottom: 1px solid #dcdcdc !important;
+}
+
+.layui-layer-setwin a {
+	width: 24px !important;
+	height: 24px !important;
+}
+.layui-layer-setwin .layui-layer-min cite{
+	display: none;
+}
+.layui-layer-ico.layui-layer-close {
+	background: url('../../images/deleteicon.png') no-repeat !important;
+}
+.layui-layer-ico.layui-layer-max {
+	background: url('../../images/max.png') no-repeat !important;
+}
+.layui-layer-ico.layui-layer-close:hover {
+	background: url('../../images/deletehover.png') no-repeat !important;
+}
+.layui-layer-ico.layui-layer-max:hover{
+	background: url('../../images/maxhover.png') no-repeat !important;
+}
+.layui-layer-iframe .layui-layer-btn {
+	margin-top: -10px;
+}
+
+
+/*表单颜色*/
+.layui-form-select dl dd.layui-this {
+	background-color: #3a97ff !important;
+}
+.layui-form-checked,
+.layui-form-checked:hover {
+	border-color: #3a97ff
+}
+
+.layui-form-checked span,
+.layui-form-checked:hover span {
+	background-color: #ffffff;
+}
+
+.layui-form-checked i,
+.layui-form-checked:hover i {
+	color: #3a97ff;
+	border: 1px solid #3a97ff;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i {
+	border-color: #3a97ff;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+	border-color: #3a97ff;
+	background-color: #3a97ff;
+}
+.layui-form-onswitch {
+	border-color: #3a97ff;
+	background-color: #3a97ff;
+}
+
+.layui-form-radio>i:hover,
+.layui-form-radioed>i {
+	color: #3a97ff;
+}
+.layui-table-edit:focus {
+	border-color: #3a97ff!important
+}
+.layui-input:hover,
+.layui-textarea:hover,
+.layui-input:focus,
+.layui-textarea:focus {
+	border-color: #3a97ff!important
+}
+.layui-upload-drag .layui-icon {
+	color: #3a97ff;
+}
+.laydate-theme-blue{
+	background-color: #3a97ff;
+}
+.layui-laydate.laydate-theme-blue .layui-this{
+	background-color: #3a97ff !important;
+}
+.layui-laydate.laydate-theme-blue .layui-laydate-content td.laydate-selected{
+	background-color: #b0ccf1;
+}
+.layui-laydate-content td:hover,
+.layui-laydate-list li:hover {
+	background-color: #eaeaea;
+	color: #333
+}
+
+.layui-laydate.laydate-theme-blue .layui-laydate-content td.laydate-selected:hover{
+	background-color: #3a97ff !important;
+}
+.layui-laydate-footer span:hover {
+	color: #3a97ff !important;
+}
+.layui-laydate-header i:hover,
+.layui-laydate-header span:hover {
+	color: #3a97ff !important;
+}
+/* 表单圆角 */
+.layui-form-select dl {
+    border-radius: 4px !important;
+    padding:0 !important;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    border-radius: 4px !important;
+}
+
+.layui-laydate {
+    border-radius: 4px !important;
+}
+.layui-form-checkbox[lay-skin=primary] i{
+    border-radius: 4px !important;
+}
+.layui-laypage select{
+    border-radius: 4px !important;
+}
+.layui-laypage button, .layui-laypage input{
+    border-radius: 4px !important;
+}
+/*表单按钮*/
+.layui-layer-btn button {
+    height: 38px !important;
+    line-height: 38px !important;
+	margin: 5px;
+    width: 80px;
+    border-radius: 5px !important;
+    color:#999999 !important;
+    border:1px solid #dcdcdc;
+    text-align: center !important;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #3a97ff !important;
+    background-color: #3a97ff !important;
+	color: #ffffff !important;
+}
+.layui-layer-btn .layui-layer-btn0:hover{
+	opacity: 1;
+	filter: alpha(opacity=100);
+    border-color: #58a7ff;
+	background-color: #58a7ff;
+
+}
+.layui-layer-btn .layui-layer-btn0:active{
+    border-color: #1483ff;
+    background-color: #1483ff;
+}
+.layui-layer-btn .layui-layer-btn1:hover{
+	opacity: 1;
+	filter: alpha(opacity=100);
+    background-color: #fff;
+    color: #3a97ff !important;
+    border-color: #3a97ff;
+}
+.layui-layer-btn .layui-layer-btn1{
+	background-color: white;
+}
+
+.layui-layer-btn .layui-layer-btn1:active{
+	background-color: white;
+    border-color: #1483ff;
+}
+
+
+/* 为空时边框颜色 */
+.bordernull{
+	border-color: red;
+}
+
+/* input number数字上下健消失*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/*select滚动条样式*/
+.layui-form-select dl::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+.layui-form-select dl::-webkit-scrollbar-thumb {
+	background-color: #9bcaff;
+	border-radius: 10px;
+}
+/*富文本框滚动条样式*/
+.layui-layedit-iframe iframe::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	/* background-color: transparent; */
+}
+/* .layui-layedit-iframe::-webkit-scrollbar-thumb {
+	background: transparent;
+} */
+.layui-layedit-iframe iframe:hover::-webkit-scrollbar-thumb {
+	background: #9bcaff;
+	border-radius: 10px;
+}
+/*table滚动条样式*/
+.layui-table-body.layui-table-main::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+.layui-table-body.layui-table-main::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+.layui-table-body.layui-table-main:hover::-webkit-scrollbar-thumb {
+	background: #9bcaff;
+	border-radius: 10px;
+}
+/*layer-body滚动条样式*/
+body::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+	background: #9bcaff;
+	border-radius: 10px;
+}
+/*textarea滚动条样式*/
+textarea.layui-textarea::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+textarea.layui-textarea::-webkit-scrollbar-thumb {
+	background: #9bcaff;
+	border-radius: 10px;
+}
+/* 表单样式 */
+.layui-form.layui-border-box.layui-table-view{
+	border: none ;
+	border-bottom:1px solid #f5f5f5;
+}
+.layui-table-body.layui-table-main{
+	border: none !important;
+}
+.layui-table-body.layui-table-main tr:nth-child(even){
+	background: #fafafa;
+}
+.layui-table[lay-even] tr:nth-child(even) {
+    background-color: #fafafa;
+}
+.layui-table td{
+	border: none;
+	border-right:1px solid #f5f5f5;
+	font-size: 12px;
+}
+.layui-table td:last-child{
+	border: none;
+
+}
+.layui-table-header{
+	border: none;
+}
+.layui-table-header th:last-child{
+	border: none;
+}
+.layui-btn.layui-btn-xs{
+	background: none;
+	color: #429bff;
+}
+.layui-btn.layui-btn-xs:hover{
+	color: #58a7ff;
+}
+/*table页码*/
+.layui-laypage a:hover {
+	color: #3a97ff;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+	background-color: #3a97ff;
+}
+.layui-laypage input:focus,
+.layui-laypage select:focus {
+	border-color: #3a97ff!important
+}
+/* 表单验证字体颜色 */
+.error {
+	border-color: red;
+}
+label.error{
+	color: red;
+	font-size: 12px;
+}
+
+/*ztree 样式*/
+.ztree li.level0 {
+	padding-bottom: 10px;
+}
+
+.ztree {
+	padding: 0 5px;
+}
+
+.ztree * {
+	font-size: 15px;
+}
+
+.ztree li a {
+	color: #666666;
+}
+
+.ztree li a.curSelectedNode {
+	background-color: #fff;
+	border: 1px #fff solid;
+	color: #3a97ff;
+}
+
+.ztree li span.button {
+	margin-left: 5px;
+}
+
+.ztree li span.add {
+	background-image: url(../../images/ztree/ztree-add.png);
+}
+
+.ztree li span.button.edit {
+	background-image: url(../../images/ztree/ztree-mod.png);
+	margin-right: 0;
+	background-position: 0;
+}
+
+.ztree li span.button.remove {
+	background-image: url(../../images/ztree/ztree-deleted.png);
+	margin-right: 0;
+	background-position: 0;
+}
+
+.level0 li {
+	margin-top: 10px;
+}
+
+.ztree li span.button.noline_docu {
+	background-color: rgb(229, 229, 229);
+	margin-right: 5px;
+	align-items: center;
+	justify-content: center;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+}
+
+.ztree li a.curSelectedNode span.button.noline_docu {
+	background-color: #3a97ff;
+}
+
+.ztree li span.button.ico_docu {
+	width: 0;
+}
+/*下拉框宽度*/
+.layui-input-inline.selectwidth {
+	width: 182px;
+}
+
+/*日期框的现在隐藏*/
+.layui-laydate .layui-laydate-footer .laydate-footer-btns .laydate-btns-now{
+	display: none;
+}
+/*.layui-laydate .layui-laydate-footer .laydate-footer-btns .laydate-btns-confirm{*/
+	/*display: none;*/
+/*}*/
+
+/* 档号滚动条隐藏 */
+.content_overflow{
+	overflow: auto;
+}
+.content_overflow::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}

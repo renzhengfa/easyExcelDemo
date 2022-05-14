@@ -1,0 +1,145 @@
+body {
+  min-width: 1000px;
+  background-color: #f0f2f5;
+}
+
+.borrow-manage-title {
+  font-family: SourceHanSansCN-Light;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #3a97ff;
+  padding: 10px 0 10px 24px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.title2 {
+  color: #999999;
+}
+
+.borrow-manage-content {
+  background-color: #ffffff;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 0 10px;
+}
+
+.borrow-manage-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.borrow-manage-select {
+  width: 126px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 4px 0px 0px 4px;
+  border: solid 1px #d7d7d7;
+  font-size: 16px;
+  color: #666666;
+  padding-left: 5px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.select {
+  margin-left: 0;
+}
+
+.input {
+  margin-left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+  border-radius: 4px 0 0 4px;
+  border-color: rgb(215, 215, 215);
+}
+
+.borrow-manage-input:hover,
+.borrow-manage-select:hover {
+  border: 1px solid #58a7ff;
+}
+
+.borrow-manage-input:active,
+.borrow-manage-select:active {
+  border: 1px solid #1483ff;
+}
+
+.borrow-manage-input {
+  width: 390px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 0px 4px 4px 0px;
+  border: solid 1px #d7d7d7;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.borrow-manage-btn {
+  width: 80px;
+  height: 38px;
+  background-color: #3a97ff;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.borrow-manage-btn:hover {
+  background-color: #58a7ff;
+}
+
+.borrow-manage-btn:active {
+  background-color: #1483ff;
+}
+.borrow-manage-edit {
+  color: #3a97ff;
+}
+.borrow-manage-edit:hover {
+  color: #3a97ff;
+}
+
+/* tab颜色 */
+
+.layui-tab-brief > .layui-tab-title .layui-this {
+  color: #3a97ff;
+}
+
+.layui-tab-brief > .layui-tab-more li.layui-this:after,
+.layui-tab-brief > .layui-tab-title .layui-this:after {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #3a97ff;
+}
+
+/* tab2 */
+.tab2_form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab2-btn3 {
+  width: 110px;
+}
+
+/* tab3 */
+.tab3_form {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* tab padding清除 */
+.layui-tab-content {
+  padding: 10px 0 0 0;
+}
+
+.layui-tab {
+  margin: 0;
+}

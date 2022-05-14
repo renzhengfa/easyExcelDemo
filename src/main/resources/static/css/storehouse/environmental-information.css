@@ -1,0 +1,33 @@
+body {
+  background-color: #f0f3f5;
+}
+
+#container {
+  margin-left: 15px;
+}
+
+.title {
+  height: 55px;
+  line-height: 55px;
+  font-family: Arial;
+  font-size: 18px;
+  background-color: #ffffff;
+}
+
+.title1 {
+  color: #3897fe;
+  margin-left: 24px;
+}
+
+.title2 {
+  color: #d3d3d3;
+}
+
+.storageroom {
+  width: 554px;
+  height: 374px;
+  margin: 20px 10px 0 10px;
+  float: left;
+  background-color: #ffffff;
+  /*background-color: red;*/
+}

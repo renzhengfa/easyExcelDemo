@@ -1,0 +1,18 @@
+.layui-table-view {
+  height: 89%;
+}
+
+.layui-table-box {
+  height: 100%;
+}
+
+.layui-table-body {
+  height: 95%;
+}
+
+.body-post {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 99%;
+}

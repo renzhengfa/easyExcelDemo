@@ -1,0 +1,26 @@
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #1e9fff;
+}
+
+.panel-header {
+    height: 55px;
+    line-height: 55px;
+    font-size: 18px;
+    color: #3a97ff;
+    padding: 0 0 0 24px;
+}
+
+.panel-header span:last-child {
+    color: #999999;
+}
+.container{
+    margin: 0 10px;
+}
+.container label {
+    font-size: 14px;
+    color: #000;
+}
+
+.container form {
+    padding-left: 10px;
+}

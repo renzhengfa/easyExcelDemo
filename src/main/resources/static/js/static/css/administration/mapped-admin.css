@@ -1,0 +1,131 @@
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #1e9fff;
+}
+
+.panel-header {
+    height: 55px;
+    line-height: 55px;
+    font-size: 18px;
+    color: #3a97ff;
+    padding: 0 0 0 24px;
+}
+
+.panel-header span:last-child {
+    color: #999999;
+}
+.container{
+    margin: 0 10px;
+}
+.container label {
+    font-size: 14px;
+    color: #000;
+}
+
+.container form {
+    padding-left: 10px;
+}
+
+.container label:nth-of-type(2),
+.container label:nth-of-type(3) {
+    padding-left: 30px;
+}
+
+.container label:nth-of-type(4) {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 18px;
+    color: #3a97ff;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.container label:nth-of-type(4) i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    vertical-align: middle;
+    border-style: solid;
+    border-color: #3a97ff transparent transparent transparent;
+}
+
+.container a.edit, 
+.container a.del,{
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.container .btn-search,
+.container .add {
+    margin-left: 30px;
+}
+.container .add:hover{
+    border-color: rgba(58,151,255,0.45) !important;
+}
+.container table th,
+.container table tr {
+    text-align: center;
+}
+
+/* .table-container{
+    width: 1500px;
+    margin: 0 auto;
+} */
+
+.position {
+    width: 300px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.sex {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.dist {
+    width: 300px;
+}
+
+
+.layui-layer-title {
+    padding: 0 !important;
+}
+
+/* .layui-table th span {
+    font-size: 18px;
+    color: black;
+} */
+
+.layui-table td {
+    font-size: 16px;
+}
+
+.redit,
+.del {
+    color: #3a97ff;
+    font-size: 14px;
+    background: #fff;
+}
+
+.redit:hover,
+.del:hover {
+    color: #3aa0ff;
+}
+
+a.line {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 20px;
+    background: #3a97ff;
+}
+
+.layui-layer-title {
+    text-align: center;
+}

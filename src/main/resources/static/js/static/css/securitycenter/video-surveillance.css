@@ -1,0 +1,71 @@
+body {
+    background-color: #f0f2f5;
+    min-width: 1000px;
+  }
+  #command_dictionary {
+    font-family: SourceHanSansCN-Light;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #666666;
+  }
+  /* 面包屑 */
+  .command-dictionary-title {
+    height: 56px;
+    padding: 17px 0 19px 24px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    font-size: 18px;
+    color: #3a97ff;
+    box-sizing: border-box;
+  }
+  .command-dictionary {
+    padding-top: 10px;
+    padding-left: 14px;
+    background-color: #fff;
+  }
+  .command-dictionary-content-form {
+    padding: 0px 10px 0px 10px;
+  }
+  .command-dictionary-btn {
+    width: 80px;
+    height: 36px;
+    background-color: #3a97ff;
+    border-radius: 4px;
+    font-family: SourceHanSansCN-Normal;
+    color: #ffffff;
+    border: 0;
+  }
+  #command_dictionary_btn_query {
+    margin-right: 25px;
+  }
+  #command_dictionary_btn_query:hover {
+    background-color: #58a7ff;
+  }
+  
+  #command_dictionary_btn_query:active {
+    border: 1px solid #1483ff;
+  }
+  
+  /* input */
+  
+  .command-dictionary-input {
+    width: 384px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dcdcdc;
+    margin-bottom: 12px;
+    padding-left: 10px;
+  }
+  /* 操作a 标签 */
+  .command-dictionary-operation-a {
+    color: #1483ff;
+  }
+
+  .video-add {
+      margin-top: 15px;
+      margin-left: 50px;
+  }

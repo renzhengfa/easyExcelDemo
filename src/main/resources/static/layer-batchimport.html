@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>批量导入</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./layui/css/layui.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="./zTree_v3/css/zTreeStyle/zTreeStyle.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./css/public/layerform.css"
+		/>
+		<style>
+			.select-file-btn {
+				border-radius: 5px !important;
+			}
+			.select-file-btn:hover {
+				border: 1px solid #3a97ff;
+			}
+			.closefile {
+				margin-left: 15px;
+				font-size: 24px;
+				color: red;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<span style="margin-left: 100px;"
+			>注意：只能导入对应模板类型的数据！</span
+		>
+		<form
+			class="layui-form"
+			lay-filter="formTest"
+			id="form-addroom"
+			style="padding-top: 24px; padding-left: 10px; padding-right: 30px;"
+		>
+			<div class="layui-form-item" style="display: none;">
+				<label class="layui-form-label">ID：</label>
+				<div class="layui-input-block">
+					<input type="text" name="id" value="" class="layui-input" />
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">模版类型：</label>
+				<div class="layui-input-inline" id="ztreeSelect">
+					<input
+						type="text"
+						name="department_name"
+						id="department_name"
+						lay-verify="title"
+						autocomplete="off"
+						class="layui-input"
+						value="stu"
+						readonly="readonly"
+						onclick="initTree1()"
+					/>
+					<input
+						type="text"
+						class="layui-input"
+						name="department_id"
+						id="department_id"
+						value=""
+						style="display: none;"
+					/>
+					<div
+						id="departmentTreeDiv"
+						style="
+							display: none;
+							background-color: white;
+							position: absolute;
+							z-index: 9999;
+							border: 1px solid #dddddd;
+							margin-top: 5px;
+						"
+					>
+						<ul id="treeDemo" class="ztree"></ul>
+					</div>
+				</div>
+				<div class="layui-upload">
+					<button
+						type="file"
+						class="layui-btn layui-btn-primary select-file-btn"
+						id="select_files"
+					>
+						选择文件
+					</button>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">已 选 择：</label>
+				<div class="layui-input-inline">
+					<ul class="files-list" id="show_select_files"></ul>
+				</div>
+			</div>
+			<div class="layui-form-item" style="display: none;">
+				<input
+					type="button"
+					value="保 存"
+					lay-filter="saveUploadFiles"
+					lay-submit
+					id="save_upload_files"
+				/>
+			</div>
+		</form>
+	</body>
+	<script src="./js/jquery-1.11.1.min.js"></script>
+	<script src="./js/layui.js"></script>
+	<!--<script src="../../../frames/jquery.validate.min.js"></script>-->
+	<!--<script src="../../../frames/messages_zh.min.js"></script>-->
+	<script src="./js/public-ajax.js"></script>
+	<script src="./js/jquery.ztree.all.js"></script>
+	<script src="./js/ztree.js"></script>
+	<script src="./js/ztreeSelect.js"></script>
+	<script src="./js/public-initTree.js"></script>
+	<script src="./js/layerform.js"></script>
+	<script>
+		var token = window.localStorage.getItem("token");
+		var files;
+		layui.use(["layer", "form", "upload"], function () {
+			var info,
+				form = layui.form,
+				upload = layui.upload;
+			initTree1("select");
+			//         $('body').on('mouseover', 'li', function () {
+			//             $(this).children('span').css('color', '#9b9b9b');
+			//         });
+			//         $('body').on('mouseout', 'li', function () {
+			//             $(this).children('span').css('color', 'transparent');
+			//         });
+			//导入文件
+			var uploadListIns = upload.render({
+				elem: "#select_files",
+				url:
+					window.baseurl + "stu/importStuExcel",
+				headers: { authorization: token },
+				accept: "file", //普通文件
+				acceptMime: "file/xls,file/xlsx", // 显示这些后缀名文件
+				exts: "xls|xlsx", //自己允许上传该后缀的文件
+				multiple: false,
+				auto: false,
+				size: 0,
+				bindAction: "#save_upload_files",
+				data: {
+					typeId: function () {
+						return $("#department_id").val();
+					},
+				},
+				choose: function (obj) {
+					files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+					obj.preview(function (index, file, result) {
+						var oFile,
+							fileList = $("#show_select_files");
+						oFile =
+							"<li>" +
+							file.name +
+							'<span class="closefile"><i class="layui-icon">&#x1006;</i><span></li>';
+						fileList.append(oFile);
+						//点击x删除其所在的li
+						$("ul li span").on("click", function () {
+							$(this).parent().remove();
+							delete files[index];
+							uploadListIns.config.elem.next()[0].value = ""; //清空 input file 值，以免删除后出现同名文件不可选
+						});
+					});
+				},
+				done: function (res, index, upload) {
+					parent.layer.msg(res.msg);
+					if (res.state) {
+						window.parent.frames["menuframe"].reloadTable();
+						return delete this.files[index]; //上传成功后删除从文件队列中删除该文件
+					}
+					return false;
+				},
+			});
+		});
+		//判断对象是否为空
+		function isEmptyObject(obj) {
+			for (var key in obj) {
+				return false;
+			}
+			return true;
+		}
+		//获取数据
+		function getSaveData() {
+			if (!isEmptyObject(files)) {
+				$("#save_upload_files").click();
+				window.parent.frames["menuframe"].reloadTable();
+			} else {
+				parent.layer.msg("请选择EXCEL文件！");
+			}
+		}
+	</script>
+</html>

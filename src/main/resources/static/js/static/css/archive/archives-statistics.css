@@ -1,0 +1,111 @@
+html,
+body {
+    height: calc(100% - 10px);
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.top-field .box-item {
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 20px;
+}
+
+.top-field .logo img {
+    color: red;
+    width: 76px;
+    height: 76px;
+    text-align: center;
+    line-height: 76px;
+    margin-bottom: 4px;
+}
+
+.top-field .left-title {
+    padding-left: 10px;
+}
+
+.top-field .right-today-count {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.top-field .right-today-percent {
+    text-align: left;
+    margin-left: 16px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(188, 188, 188, 1);
+}
+
+.top-field .right-all-count {
+    float: right;
+    height: 22px;
+    line-height: 22px;
+    padding: 0px 4px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 16px;
+    color: #FFF;
+    font-family: Microsoft YaHei;
+}
+
+.layui-progress-big,
+.layui-progress-big .layui-progress-bar {
+    height: 14px;
+    line-height: 18px;
+}
+
+.layui-bg1 {
+    background-color: #3A97FF;
+}
+
+.layui-bg2 {
+    background-color: #FFAE3A;
+}
+
+.layui-bg3 {
+    background-color: #00E390;
+}
+
+.layui-bg4 {
+    background-color: #E3D600;
+}
+
+
+.bottom-field .item-title {
+    border-left: 4px solid rgba(58, 151, 255, 1);
+    padding-left: 10px;
+}
+
+.bottom-field .item-title span {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(117, 117, 117, 1);
+}
+
+/* table */
+.table-height {
+    padding-left: 10px; 
+    height: 100%;
+}
+
+.table-height #borrowOrder10 {
+    margin-top: 20px;
+    color: rgba(153, 153, 153, 1);
+    table-layout:fixed; 
+    text-align: center;
+}
+
+.table-height #borrowOrder10 th {
+    color: #757575; 
+}
+.table-height #borrowOrder10 td{
+    text-align: center; 
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+}
+ 

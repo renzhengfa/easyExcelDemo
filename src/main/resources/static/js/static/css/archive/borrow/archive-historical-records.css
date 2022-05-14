@@ -1,0 +1,113 @@
+body {
+  min-width: 1000px;
+  background-color: #f0f2f5;
+}
+
+.borrow-historical-title {
+  font-family: SourceHanSansCN-Light;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #3a97ff;
+  padding: 10px 0 10px 24px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.title2 {
+  color: #999999;
+}
+
+.borrow-historical-content {
+  background-color: #ffffff;
+  padding: 0 10px 10px 10px;
+  margin: 10px 10px 0 10px;
+  
+}
+
+.borrow-historical-select {
+  width: 190px;
+  height: 38px;
+  text-indent: 17px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px #d7d7d7;
+  font-size: 14px;
+  color: #666666;
+  cursor: pointer;
+  padding-left: 5px;
+  margin-right: 8px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.borrow-historical-input {
+  width: 190px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px #d7d7d7;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.borrow-historical-input:hover,
+.borrow-historical-select:hover {
+  border: 1px solid #58a7ff;
+}
+
+.borrow-historical-input:active,
+.borrow-historical-select:active {
+  border: 1px solid #1483ff;
+}
+
+.borrow-historical-btn {
+  width: 80px;
+  height: 38px;
+  background-color: #3a97ff;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.borrow-historical-btn:hover {
+  background-color: #58a7ff;
+}
+
+.borrow-historical-btn:active {
+  background-color: #1483ff;
+}
+
+.borrow-historical-records-detail:hover{
+  color: #3a97ff;
+}
+
+/* 时间框 图标 */
+#create_time,
+#historical_start_time,
+#historical_stop_time {
+  padding-left: 10px;
+  background: url(../../../images/archive/time.png) no-repeat 5px center;
+  background-size: 16px 16px;
+  text-indent: 17px;
+}
+
+/* 搜索框扫描 */
+
+#borrow_historical_query_content {
+  background: url(../../../images/archive/scan.png) no-repeat 5px center;
+  background-size: 16px 16px;
+  background-position: 95% 50%;
+  /*text-indent: 17px;*/
+}
+
+.borrow-historical-records-detail {
+  color: #3a97ff;
+}

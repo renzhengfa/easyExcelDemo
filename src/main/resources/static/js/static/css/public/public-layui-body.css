@@ -1,0 +1,123 @@
+.layui-side ::-webkit-scrollbar {
+  width: 0px;
+}
+.layui-table thead tr {
+  background-color: #e9e9e9;
+}
+.layui-table[lay-even] tr:nth-child(even) {
+  background-color: #fafafa;
+}
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.bodyheader {
+  display: none;
+}
+.panel-header {
+  height: 53px;
+  line-height: 53px;
+  font-size: 16px;
+  color: #3a97ff;
+  padding: 0 0 0 24px;
+}
+.panel-header span:last-child {
+  color: #999999;
+}
+.layui-layout-admin {
+  display: none;
+  top: 20px;
+}
+.layui-layout-admin .layui-body {
+  left: 225px;
+  bottom: 0;
+  background-color: #fff;
+}
+.layui-layout-admin .layui-side {
+  box-shadow: 1px 0 9px #eceaea;
+  width: 220px;
+  background-color: #ffffff !important;
+}
+.layui-side-scroll {
+  width: 100%;
+}
+.layui-btn-danger {
+  background-color: #ff5722;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background-color: #3a97ff;
+}
+.layui-laypage input:focus,
+.layui-laypage select:focus {
+  border-color: #3a97ff !important;
+}
+.layui-upload-drag .layui-icon {
+  color: #3a97ff;
+}
+.layui-upload-drag[lay-over] {
+  border-color: #3a97ff;
+}
+.layui-slider-input-btn i:hover {
+  color: #3a97ff;
+}
+.layui-elem-quote {
+  border-left: 5px solid #3a97ff;
+}
+.layui-btn-primary:hover {
+  border-color: #3a97ff;
+}
+.layui-btn-group .layui-btn-primary:hover {
+  color: #3a97ff;
+}
+.layui-laypage a:hover {
+  color: #3a97ff;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background-color: #3a97ff;
+}
+.layui-upload {
+  position: relative;
+  padding: 30px;
+  border: 1px solid #e2e2e2;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+.layui-upload .layui-icon {
+  font-size: 50px;
+  color: #3a97ff;
+}
+.layui-form-select dl dd.layui-this {
+  background-color: #3a97ff;
+}
+
+.layui-form-radio > i:hover,
+.layui-form-radioed > i {
+  color: #3a97ff;
+}
+
+#barupdate {
+  color: #3aa0ff;
+  font-size: 14px;
+  background: none;
+}
+#bardelete {
+  color: #3aa0ff;
+  font-size: 14px;
+  background: none;
+}
+a.line {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1px;
+  height: 18px;
+  background: #3aa0ff;
+}
+
+.layui-upload-img {
+  height: 100%;
+  width: 100%;
+}

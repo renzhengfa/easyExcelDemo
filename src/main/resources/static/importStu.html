@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导入Excel文件内容到数据库</title>
+    <style type="text/css">
+        body{ font-size:14px;}
+        input{ vertical-align:middle; margin:0; padding:0}
+        .file-box{ position:relative;width:340px}
+    </style>
+</head>
+<body>
+<div class="file-box">
+    <form action="/stu/saveData" method="post" enctype="multipart/form-data">
+        Select excel: <input type="file" name="multipartFile" multiple="multiple" />
+        <input type="submit" value="上传" />
+    </form>
+</div>
+</body>
+</html>

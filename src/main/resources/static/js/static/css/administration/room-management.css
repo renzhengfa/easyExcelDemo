@@ -1,0 +1,116 @@
+.body-side{
+  width: 300px;
+}
+.body-post {
+  margin-top: 5px;
+  margin-left: 300px;
+  height: 99%;
+  overflow:auto
+}
+.body-post li {
+  border-bottom: 5px solid #f0f2f5;
+}
+.layui-side-scroll{
+  width: 100%;
+  border-right: 5px solid #f7f7f7;
+}
+.layui-side-scroll .ztree{
+  padding-right: 0;
+}
+.body-side .ztree .layui-card{
+  border-right: 0;
+}
+.body-side .ztree .layui-card .layui-card-body{
+  height: 100px;
+}
+/*scroll的滚动条  */
+.layui-side-scroll::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+.layui-side-scroll::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+.layui-side-scroll:hover::-webkit-scrollbar-thumb {
+	background: #9bcaff;
+	border-radius: 10px;
+}
+.depart {
+  border-bottom: 3px solid #f0f2f5;
+}
+.cursorclick {
+  right: 10px;
+  cursor: pointer;
+}
+
+.cursorclick a {
+  color: #3a97ff !important;
+  margin-right: 5px;
+}
+#room .layui-this .layui-card .layui-card-header {
+  background-color: #3a97ff;
+  color: #f9f9f9;
+}
+
+#room .layui-this .layui-card .layui-card-header .layui-layout-right a {
+  color: #f9f9f9 !important;
+  cursor: pointer;
+}
+
+.layui-card-body {
+  text-align: center;
+  line-height: normal;
+}
+
+.room-pie {
+  height: 100%;
+  width: 65%;
+}
+
+.room-bar {
+  height: 300px;
+}
+
+.layui-card-body i {
+  font-size: 100px;
+  color: #e9e9e9;
+}
+
+.layui-card-body i:hover {
+  color: #1e9fff;
+}
+
+.layui-layout-left {
+  left: 10px;
+}
+.roomhum {
+  left: 70px;
+}
+/* .roomhum {
+  right: 15px;
+} */
+
+.roomhum span {
+  color: #b2b2b2;
+  font-size: 24px;
+  text-align: left;
+}
+
+@media screen and (max-width: 720px) {
+  .layui-layout-admin .layui-side {
+    width: 200px;
+  }
+
+  .layui-layout-admin .layui-body {
+    left: 205px;
+  }
+
+  .room-card-body {
+    height: 150px;
+  }
+
+  .roomhum span {
+    font-size: 14px;
+  }
+}

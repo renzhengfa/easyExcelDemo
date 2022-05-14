@@ -1,0 +1,213 @@
+.panel-header {
+    height: 55px;
+    line-height: 55px;
+    font-size: 18px;
+    color: #3a97ff;
+    padding: 0 0 0 24px;
+}
+.panel-header span:last-child {
+    color: #999999;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    /*overflow: auto;*/
+}
+.container-left {
+    width: 220px;
+    min-width: 220px;
+    height:100%;
+    /*height: 785px;*/
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px #e9e9e9, -1px -1px 1px #e9e9e9;
+    border-radius: 5px 5px 0 0;
+}
+.container-left .searchBar {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    color: #fff;
+    background-color: #3a97ff;
+    border-radius: 5px 5px 0 0;
+}
+.container-left .searchBar input {
+    background-color: #1a86ff;
+    border: none;
+    color: #fff;
+    outline: none;
+    height: 28px;
+}
+.container-left .filetree {
+    margin: 36px 0 0 30px;
+}
+.container-left .filetree span:hover {
+    color: #3a97ff;
+    cursor: pointer;
+}
+.container-right {
+    flex: 1;
+    margin-left: 10px;
+    overflow: hidden;
+    /*min-width: 1400px;*/
+}
+.container-right input {
+    border-radius: 4px;
+}
+.container-right button {
+    border-radius: 6px;
+    margin-left: 10px;
+}
+.container-right .public {
+    margin-left: 20px;
+}
+.container-right .pos {
+    position: relative;
+}
+.container-right .pos span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.container-right .search-tips {
+    width: 235px;
+}
+.container-right .btns {
+    width: 100%;
+    /*margin-top: 14px;*/
+    display: flex;
+    justify-content: space-between;
+}
+.container-right .btns .output {
+    position: relative;
+    width: 93px;
+}
+.container-right .btns .output::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    vertical-align: middle;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+.container-right .btn-right {
+    position: relative;
+}
+.container-right .btn-right img {
+    position: absolute;
+    left: 15px;
+    top: 9px;
+}
+.container-right .btns .open {
+    display: inline-block;
+    color: #fff;
+    padding-left: 50px;
+    width: 170px;
+    margin-right: 25px;
+    border: 0;
+    outline: none;
+    background-color: #1e9fff;
+    border-radius: 6px;
+    height: 38px;
+    line-height: 38px;
+    box-sizing: border-box;
+}
+/*.container-right table {*/
+    /*margin-top: 14px;*/
+/*}*/
+
+.redit,.check {
+    color: #3aa0ff;
+    font-size: 14px;
+    background: #fff;
+    min-width: 40px;
+}
+.redit:hover,.check:hover {
+    color: #3aa0ff;
+}
+a.line {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 18px;
+    background: #3aa0ff;
+    /* margin-left: -15px;
+    margin-right: -15px; */
+}
+.layui-table-body {
+    overflow: auto;
+}
+.layui-table-box {
+    overflow: hidden;
+}
+.layui-table-box{
+    overflow: hidden;
+}
+.btns-op{
+    position: relative;
+}
+#open_temp_file .btns-inner{
+    position: absolute;
+    right: 20px;
+}
+.btns-op button{
+    border-radius: 5px;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #3a97ff;
+}
+#select_operation option{
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.layui-form-select dl dd.layui-this{
+    background-color: #3a97ff;
+}
+.btns .layui-input,.btns .layui-select,.btns .layui-textarea{
+    background-color: #3a97ff;
+    color: #fff;
+    border: none; 
+    text-align: center;
+    cursor: pointer
+}
+.btns .layui-select-title{
+    color: #fff !important;
+}
+span.icon {
+    display: inline-block;
+    color: red;
+    font-size: 16px;
+}
+
+.borrow-manage-input:hover,
+.borrow-manage-select:hover {
+    border: 1px solid #58a7ff;
+}
+
+.borrow-manage-input:active,
+.borrow-manage-select:active {
+    border: 1px solid #1483ff;
+}
+
+.borrow-manage-input {
+    width: 390px;
+    height: 38px;
+    background-color: #ffffff;
+    border-radius: 0px 4px 4px 0px;
+    border: solid 1px #d7d7d7;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.topmargin{
+    margin-top: 10px;
+}

@@ -1,0 +1,107 @@
+.panel-header {
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+    color: #3a97ff;
+    padding: 0 0 0 24px;
+}
+.panel-header span:last-child {
+    color: #999999;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.public {
+    color: #666666;
+    font-size: 14px;
+    padding-left: 55px;
+}
+.fujian {
+    margin-top: 40px;
+    position: relative;
+}
+.fujian .file {
+    position: absolute;
+    top: -35px;
+    left: 100px;
+    padding: 10px;
+    opacity: 0;
+    width: 100px;
+}
+.info-left {
+    width: 77%;
+    /*min-width: 1400px;*/
+    border-right: 10px solid #f0f2f5;
+    box-sizing: border-box;
+}
+.basicinfo-body {
+    position: relative;
+}
+.mark {
+    position: absolute;
+    left: 560px;
+    top: 348px;
+}
+.info-right {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px !important;
+}
+.info-right h3 {
+    color: #666666;
+    font-size: 16px;
+}
+.upload {
+    padding-top: 15px;
+    padding-left: 55px;
+}
+.upload a.up {
+    background: url('../../images/archive/enclosure.png') 8px center no-repeat;
+    color: #3a97ff;
+    font-size: 16px;
+    text-align: right;
+    line-height: 26px;
+    width: 80px;
+    height: 26px;
+    padding: 5px;
+    border: 1px solid #dcdcdc;
+    position: absolute;
+    top: -36px;
+    left: 100px;
+}
+.btn {
+    text-align: center;
+    margin-top: 80px;
+}
+a,button {
+    border-radius: 5px !important;
+}
+span.icon {
+    /*display: inline-block;*/
+    font-size: 16px;
+    color: red;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #3a97ff;
+}
+.layui-table-page{
+    height: 55px;
+    overflow-x: auto;
+}
+.layui-btn-primary{
+    border: none;
+}
+a.downloadFile{
+    color: #3a97ff;
+}
+.layui-form-label {
+    padding: 9px 0;
+    width: 100px;
+}
